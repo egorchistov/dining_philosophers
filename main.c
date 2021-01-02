@@ -88,7 +88,7 @@ static void
 test(long no)
 {
     if (state[no] == STATE_HUNGRY && state[left(no)] != STATE_EATING &&
-        state[right(no)] != STATE_EATING) {
+            state[right(no)] != STATE_EATING) {
         state[no] = STATE_EATING;
         up(no);
     }
@@ -146,7 +146,7 @@ stop(int signo)
 static void
 redraw(void)
 {
-    puts("\033[6;0H"); // Set 6,0 coords
+    puts("\033[6;0H"); // Set 6,0 cords
 
     for (long i = 0; i < n; ++i) {
         char c = '-';
@@ -176,7 +176,7 @@ static void
 visual(void)
 {
     puts("\033[2J"); // Clear screen
-    puts("\033[0;0H" // Set 0,0 coords
+    puts("\033[0;0H" // Set 0,0 cords
          "Dining philosophers problem\n"
          "(Press ^C to stop program)\n"
          "T - Thinking\n"
@@ -193,7 +193,7 @@ int
 main(int argc, char *argv[])
 {
     if (argc < 4) {
-        fprintf(stderr, "Usage: %s nphilosophers thinktime eattime\n", argv[0]);
+        fprintf(stderr, "Usage: %s n_philosophers think_time eat_time\n", argv[0]);
         _exit(EXIT_FAILURE);
     }
 
